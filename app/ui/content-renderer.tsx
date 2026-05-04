@@ -1,5 +1,41 @@
+import { Fragment } from 'react'
 import Image from 'next/image'
 import { ContentBlock } from '../lib/definitions'
+
+// Parses `[label](url)` syntax inside a string into renderable parts.
+function renderInline(text: string) {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: React.ReactNode[] = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  let key = 0
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(
+        <Fragment key={key++}>{text.slice(lastIndex, match.index)}</Fragment>,
+      )
+    }
+    const [, label, href] = match
+    const isExternal = /^https?:\/\//.test(href)
+    parts.push(
+      <a
+        key={key++}
+        href={href}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+        className="font-medium text-zinc-900 underline underline-offset-2 hover:text-zinc-600 dark:text-zinc-50 dark:hover:text-zinc-300"
+      >
+        {label}
+      </a>,
+    )
+    lastIndex = match.index + match[0].length
+  }
+  if (lastIndex < text.length) {
+    parts.push(<Fragment key={key++}>{text.slice(lastIndex)}</Fragment>)
+  }
+  return parts
+}
 
 export default function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
   return (
@@ -12,7 +48,7 @@ export default function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) 
                 key={i}
                 className="leading-7 text-zinc-700 dark:text-zinc-300"
               >
-                {block.content}
+                {renderInline(block.content)}
               </p>
             )
 

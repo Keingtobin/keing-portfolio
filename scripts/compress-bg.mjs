@@ -32,7 +32,9 @@ await sharp(input)
 const { size: outputSize } = await import('node:fs').then((fs) =>
   fs.promises.stat(output),
 )
+const outputMeta = await sharp(output).metadata()
 
 const fmt = (bytes) => `${(bytes / 1024 / 1024).toFixed(2)} MB`
 console.log(`Wrote ${output}`)
 console.log(`  ${fmt(inputSize ?? 0)} → ${fmt(outputSize)}`)
+console.log(`  width: ${outputMeta.width}, height: ${outputMeta.height}`)

@@ -14,11 +14,11 @@ export type Project = {
   content: ContentBlock[]
 }
 
-export type BlogPost = {
-  slug: string
-  title: string
-  description: string
-  date: string
-  tags: string[]
-  content: ContentBlock[]
+export type MapItem = {
+  src: string
+  alt: string
+  // Intrinsic pixel dimensions of the source image — used by next/image
+  // to reserve layout space and avoid content-shift while loading.
+  width: number
+  height: number
 }

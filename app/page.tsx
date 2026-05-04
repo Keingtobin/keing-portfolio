@@ -51,9 +51,8 @@ export default function Home() {
           </p>
           <p className="max-w-prose text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             This portfolio is meant to show off all of the different projects I have done,
-            or the ones that I'm currently working on. I also have tons of different thoughts,
-            which is what my blog is going to be for. You can find posts about 
-            GIS, Tech, or whatever else has been on my mind.
+            or the ones that I'm currently working on. It is also going to be a place for me to
+            dump all of the different maps I make.            
           </p>
         </div>
       </section>
