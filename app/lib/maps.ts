@@ -20,5 +20,11 @@ export const maps: MapItem[] = [
     alt: 'Urban vs. Rural tracts U.S.',
     width: 2560,
     height: 1978,
+  },
+  {
+    src: '/projects/huber-timber.webp',
+    alt: 'Timber value estimation map',
+    width: 2550,
+    height: 3300,
   }
 ]
