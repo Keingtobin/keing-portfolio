@@ -50,9 +50,9 @@ export default function Home() {
             Outside of work I enjoy all things outdoors including hiking, trail running, and skiing.
           </p>
           <p className="max-w-prose text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            This portfolio is meant to show off all of the different projects I have done,
+            This portfolio is meant to show off some of the different projects I have done,
             or the ones that I'm currently working on. It is also going to be a place for me to
-            dump all of the different maps I make.            
+            dump the maps I make.            
           </p>
         </div>
       </section>
