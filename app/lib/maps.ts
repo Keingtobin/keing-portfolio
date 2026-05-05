@@ -26,5 +26,35 @@ export const maps: MapItem[] = [
     alt: 'Timber value estimation map',
     width: 2550,
     height: 3300,
+  },
+  {
+    src: '/projects/teller-fires.webp',
+    alt: 'Teller county and fires map',
+    width: 2560,
+    height: 1978
+  },
+  {
+    src: '/projects/atmospheric-river.webp',
+    alt: 'Souther California bomb cyclone gif',
+    width: 1076,
+    height: 643
+  },
+  {
+    src: '/projects/paradise-3d.webp',
+    alt: '3D rendering of paradise california',
+    width: 1527,
+    height: 902
+  },
+  {
+    src: '/projects/paradise-fire-bands.webp',
+    alt: 'An interesting band combination of the paradise fire',
+    width: 723,
+    height: 707
+  },
+  {
+    src: '/projects/mrs-ndvi.webp',
+    alt: 'NDVI of the Mountain Research Station in Colorado',
+    width: 2560,
+    height: 1978
   }
 ]
